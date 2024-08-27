@@ -1,0 +1,43 @@
+﻿@model IEnumerable<EntityLayer.Concreate.Guide>
+
+
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+<section class="w3l-team" id="team">
+    <div class="team-block py-5">
+        <div class="container py-lg-5">
+            <div class="title-content text-center mb-lg-3 mb-4">
+                <h6 class="sub-title">Bizim Takım</h6>
+                <h3 class="hny-title">En Popular Rehberlerimiz</h3>
+            </div>
+            <div class="row">
+                @foreach(var x in Model){
+                <div class="col-lg-3 col-6 mt-lg-5 mt-4">
+                    <div class="box16">
+                            <img src="@x.GuideImage" alt="" class="img-fluid" style="object-fit: cover; width: 400px; height: 600px;" />
+                        <div class="box-content">
+                            <h3 class="title"><a href="#url">@x.GuideName</a></h3>
+                            <span class="post">@x.GuideDescripton</span>
+                            <ul class="social">
+                                <li>
+                                        <a href="@x.GuideInstagramURL" >
+                                            <span class="fa fa-instagram" style="position: relative; display: inline-block; width: 25px; height: 25px; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); border-radius: 50%; text-align: center; line-height: 25px; color: white; font-size: 14px;"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="@x.GuideXURL" >
+                                            <span class="fa fa-twitter" style="color: #1DA1F2; font-size: 25px;"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</section>

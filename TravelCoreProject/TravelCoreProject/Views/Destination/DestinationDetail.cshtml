@@ -1,0 +1,150 @@
+﻿@model IEnumerable<EntityLayer.Concreate.Destination>
+
+@{
+    ViewData["Title"] = "DestinationDetail";
+    Layout = "~/Views/Shared/_UserLAyout.cshtml";
+}
+
+
+
+
+~
+<html>
+
+<body>
+
+    <section class="w3l-about-breadcrumb text-left">
+        <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4">
+            <div class="container">
+                <h2 class="title">Tur Detayı</h2>
+                <ul class="breadcrumbs-custom-path mt-2">
+                    <li><a href="/Home/Index">Ana Sayfa</a></li>
+                    <li ><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span class="active"> Turun Detayları </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- //about breadcrumb -->
+    <!--/blog-->
+    <div class="py-5 w3l-homeblock1 text-center">
+        <div class="container mt-md-3">
+            @foreach(var x in Model){
+            <h3 class="blog-desc-big text-center mb-4">
+                @x.DestinationCity
+            </h3>
+            }
+            <div class="blog-post-align">
+
+                @foreach(var x in Model){
+                <div class="blog-post-img">
+                    <a href="#"><img src="@x.Guide.GuideImage" alt="" class="rounded-circle img-fluid" /></a>
+                </div>
+                <div class="blog-post-info">
+                    <div class="author align-items-center mb-1">
+                        <a href="/About/Index">@x.Guide.GuideName</a> 'in <a href="/Guide/GuideDestination/@x.GuideID">Turları</a>
+                    </div>
+                </div>
+                }
+
+            </div>
+        </div>
+    </div>
+    <section class="blog-post-main w3l-homeblock1">
+        <!--/blog-post-->
+        <div class="blog-content-inf pb-5">
+            <div class="container pb-lg-4">
+                <div class="single-post-image">
+                    <div class="post-content">
+                        @foreach(var x in Model){
+                        <img src="@x.DestinationImageCover" class="radius-image img-fluid mb-5" alt="" style="width:1200px"/>
+                        }
+                    </div>
+                </div>
+
+
+                <div class="single-post-content">
+
+
+                    @foreach(var x in Model){
+                    <p class="mb-4">
+                        @x.DestinationDescriptionLong1
+                    </p>
+
+
+
+                    <div class="sing-post-thumb mb-5 row pt-3">
+                        <div class="col-sm-6">
+                            <img src="@x.DestinationImage" class="img-fluid radius-image" alt="" style="height:500px; width:400px; object-fit:cover">
+                        </div>
+                        <div class="col-sm-6 mt-sm-0 mt-3">
+                                <img src="@x.DestinationImageDetail" class="img-fluid radius-image" alt="" style="height:500px; width:400px; object-fit:cover">
+                        </div>
+                    </div>
+
+                    <p class="mb-4">
+                        @x.DestinationDescriptionLong2
+                    </p>
+
+                    }
+
+                    @foreach(var x in Model)
+                    {
+                        <div class="author-card mt-5">
+                        <div class="row align-items-center">
+                            <div class="col-sm-3 col-6">
+                                <div>
+                                    <img src="@x.Guide.GuideImage" alt="" class="rounded-circle img-fluid">
+                                </div>
+                            </div>
+                            <div class="col-sm-9 mt-sm-0 mt-3">
+                                <h3 class="mb-3 title">@x.Guide.GuideName</h3>
+                                <p>
+                                    @x.Guide.GuideDescripton
+                                </p>
+                                <ul class="author-icons mt-4">
+                                    <li>
+                                        <a class="facebook" href="@x.Guide.GuideInstagramURL">
+                                            <span class="fa fa-instagram"
+                                                  aria-hidden="true"></span>
+                                                  
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="twitter" href="@x.Guide.GuideXURL">
+                                            <span class="fa fa-twitter"
+                                                  aria-hidden="true"></span>
+                                        </a>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                  
+
+
+                    @await Component.InvokeAsync("CommnetListDestinationDetail",new {id=@ViewBag.DestinationId})
+
+
+
+                    @await Component.InvokeAsync("AddCommentDestinatonDetail",new {id=@ViewBag.DestinationId})
+
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+
+</body>
+
+
+</html>
+

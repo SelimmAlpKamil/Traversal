@@ -1,0 +1,70 @@
+﻿@model IEnumerable<EntityLayer.Concreate.About>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+
+<section class="w3l-about-breadcrumb text-left">
+    <div class="breadcrumb-bg breadcrumb-bg-about py-sm-5 py-4">
+        <div class="container py-2">
+            <h2 class="title">Hakkımızda</h2>
+            <ul class="breadcrumbs-custom-path mt-2">
+                <li><a href="/Home/Index">Ana Sayfa</a></li>
+                <li class="active"><span class="fa fa-arrow-right mx-2" aria-hidden="true"></span> Hakkımızda </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+
+<section class="w3l-cta4 py-5">
+    <div class="container py-lg-5">
+        @foreach(var x in Model){
+        <div class="ab-section text-center">
+            <h6 class="sub-title">Hakkımızda</h6>
+            <h3 class="hny-title">@x.AboutTitle1</h3>
+            <p class="py-3 mb-3">
+                @x.AboutDetails1
+            </p>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-9 mx-auto">
+                <img src="@x.AboutImage1" class="img-fluid" alt="">
+            </div>
+        </div>
+        }
+    </div>
+</section>
+
+
+
+<section class="w3l-content-6 py-5">
+    <div class="container py-lg-5">
+        <div class="row">
+            @foreach(var x in Model){
+            <div class="col-lg-6 content-6-left pr-lg-5">
+                    <h6 class="sub-title">NEDEN BİZİ SEÇMELİSİNİZ</h6>
+                <h3 class="hny-title">@x.AboutTitle2</h3>
+            </div>
+            <div class="col-lg-6 content-6-right mt-lg-0 mt-4">
+                <p class="mb-3">
+                    @x.AboutDetails2
+                </p>
+              
+            </div>
+        }
+    </div>
+</section>
+
+
+@await Component.InvokeAsync("AboutPopularDestination");
+
+@await Component.InvokeAsync("AboutStatistics");
+
+@await Component.InvokeAsync("AboutGuideList");
+

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<EntityLayer.Concreate.Destination>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_MemberLayout.cshtml";
+}
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Şehir</th>
+        <th>Süre</th>
+        <th>Kapatide</th>
+        <th>Fiyat</th>
+        <th>Detay</th>
+    </tr>
+    @foreach(var x in Model)
+    {
+        <tr>
+            <td>@x.DestinationId</td>
+            <td>@x.DestinationCity</td>
+            <td>@x.DestinationDayAndNight</td>
+            <td>@x.DestinationCapacity</td>
+            <td>@x.DestinationPrice</td>
+            <td>
+                <a href="/Destination/DestinationDetail/@x.DestinationId" class="btn btn-primary">Detay</a>
+            </td>
+        </tr>
+    }
+
+
+</table>
+
+

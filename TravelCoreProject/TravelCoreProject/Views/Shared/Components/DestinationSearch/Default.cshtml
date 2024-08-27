@@ -1,0 +1,26 @@
+﻿@model EntityLayer.Concreate.Destination
+
+
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+<div class="flex-wrap search-wthree-field mt-md-5 mt-4">
+    <form method="post" class="booking-form" asp-action="DestinationSearch" asp-controller="Destination">
+        <div class="row book-form">
+            <div class="form-input col-md-4 mt-md-0 mt-3">
+
+                @Html.DropDownListFor(x => x.DestinationId, (List<SelectListItem>)@ViewBag.destinationList, new { @class = "selectpicker" })
+
+            </div>
+            
+            <div class="bottom-btn col-md-4 mt-md-0 mt-3">
+                <button class="btn btn-style btn-secondary">
+                    <span class="fa fa-search mr-3"
+                          aria-hidden="true"></span> Ara
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

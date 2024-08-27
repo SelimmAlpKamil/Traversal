@@ -1,0 +1,43 @@
+﻿@model IEnumerable<EntityLayer.Concreate.Destination>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Tur Rotaları</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Şehir</th>
+        <th>Fiyat</th>
+        <th>Kapasite</th>
+        <th>Sitede Gör</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+    </tr>
+    @foreach(var x in Model)
+    {
+        <tr>
+            <td>@x.DestinationId</td>
+            <td>@x.DestinationCity</td>
+            <td>@x.DestinationPrice $</td>
+            <td>@x.DestinationCapacity</td>
+            <td>
+                <a class="btn btn-info" href="/Destination/DestinationDetail/@x.DestinationId">Sitede Gör</a>
+            </td>
+            <td>
+                <a class="btn btn-danger" href="/Admin/Destinatin/DeleteDestination/@x.DestinationId">Sil</a>
+            </td>
+            <td>
+                <a class="btn btn-warning" href="/Admin/Destinatin/UpdateDestinatino/@x.DestinationId">Güncelle</a>
+            </td>
+        </tr>
+    }
+</table>
+<br />
+
+<a class="btn btn-primary" href="/Admin/Destinatin/AddDestination">Ekle</a>
+
+

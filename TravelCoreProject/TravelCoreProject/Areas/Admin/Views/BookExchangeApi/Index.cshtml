@@ -1,0 +1,26 @@
+﻿@model IEnumerable<TravelCoreProject.Areas.Admin.Models.BookExchangeApiViewModel.Exchange_Rates>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h1>Güncel kur bilgileri</h1>
+
+<table class="table table-bordred">
+    <tr>
+        <th>Ülke Kodu</th>
+        <th>Birim</th>
+        
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.currency</td>
+            <td>@x.exchange_rate_buy TL</td>
+        </tr>
+    }
+
+</table>
+

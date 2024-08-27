@@ -1,0 +1,45 @@
+﻿@model EntityLayer.Concreate.ContactUs
+
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+<div class="col-lg-6 mt-lg-0 mt-5 contact-right">
+    <form method="post" class="signin-form" asp-controller="Contact" asp-action="ContactAdd">
+        <div class="input-grids">
+            <div class="form-group">
+                <input type="text"  placeholder="İsim" class="contact-input" asp-for="ContactUsName"/>
+                @if (TempData["ErrorNewLetter"] != null)
+                {
+                    <div class="alert alert-danger">@TempData["ErrorNewLetter"]</div>
+                }
+            </div>
+            <div class="form-group">
+                <input type="email"   placeholder="Mail" class="contact-input" required="" asp-for= "ContactUsMail" />
+                @if (TempData["ErrorNewLetter"] != null)
+                {
+                    <div class="alert alert-danger">@TempData["ErrorNewLetter"]</div>
+                }
+            </div>
+            <div class="form-group">
+                <input type="text"   placeholder="Başlık" class="contact-input" asp-for= "ContactUsSubject" />
+                @if (TempData["ErrorNewLetter"] != null)
+                {
+                    <div class="alert alert-danger">@TempData["ErrorNewLetter"]</div>
+                }
+            </div>
+        </div>
+        <div class="form-group">
+            <textarea  placeholder="Mesaj" required="" asp-for= "ContactUsMessage"></textarea>
+            @if (TempData["ErrorNewLetter"] != null)
+            {
+                <div class="alert alert-danger">@TempData["ErrorNewLetter"]</div>
+            }
+        </div>
+        <div class="text-right">
+            <button class="btn btn-style btn-primary">Gönder</button>
+        </div>
+    </form>
+</div>
+

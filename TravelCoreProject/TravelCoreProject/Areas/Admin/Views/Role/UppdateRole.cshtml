@@ -1,0 +1,16 @@
+﻿@model EntityLayer.Concreate.AppRole
+@{
+    ViewData["Title"] = "UppdateRole";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Role Güncelle</h1>
+
+<form method="post" class="form form-group">
+    <label>İsim</label>
+    <input class="form-control" asp-for="Name" />
+    <span class="alert-danger" asp-validation-for="Name"></span>
+    <br />
+    <button class="btn btn-primary">Güncelle</button>
+</form>
+

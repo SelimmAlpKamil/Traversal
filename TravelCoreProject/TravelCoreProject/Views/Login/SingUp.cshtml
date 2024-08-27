@@ -1,0 +1,82 @@
+﻿@model TravelCoreProject.Models.UserRegisterAppModel
+
+@{
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Login</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- LINEARICONS -->
+	<link rel="stylesheet" href="~/colorlib/fonts/linearicons/style.css">
+
+	<!-- STYLE CSS -->
+	<link rel="stylesheet" href="~/colorlib/css/style.css">
+</head>
+
+<body>
+
+	<div class="wrapper">
+		<div class="inner">
+			<img src="~/colorlib/images/image-1.png" alt="" class="image-1">
+			<form method="post" >
+				<h3>Yeni Hesap Oluştur</h3>
+				<div class="form-holder">
+					<span class="lnr lnr-user"></span>
+					<input type="text" class="form-control" placeholder="İsim"  asp-for="Name">
+				</div>
+				<span asp-validation-for="Name" style="color:red"></span>
+				<div class="form-holder">
+					<span class="lnr lnr-user"></span>
+					<input type="text" class="form-control" placeholder="Soyİsim"  asp-for="Surname">
+					
+				</div>
+				<span asp-validation-for="Surname" style="color:red"></span>
+				<div class="form-holder">
+					<span class="lnr lnr-phone-handset"></span>
+					<input type="text" class="form-control" placeholder="Kullanıcı Adı"  asp-for="Username">
+					
+				</div>
+				<span asp-validation-for="Username" style="color:red"></span>
+				<div class="form-holder">
+					<span class="lnr lnr-envelope"></span>
+					<input type="text" class="form-control" placeholder="Mail"  asp-for="Mail">
+					
+				</div>
+				<span asp-validation-for="Mail" style="color:red"></span>
+				<div class="form-holder">
+					<span class="lnr lnr-lock"></span>
+					<input type="password" class="form-control" placeholder="Şifre"  asp-for="Password">
+					
+				</div>
+				<span asp-validation-for="Password" style="color:red"></span>
+				<div class="form-holder">
+					<span class="lnr lnr-lock"></span>
+					<input type="password" class="form-control" placeholder="Şifre Tekrar"  asp-for="ConfirmPassword">
+				</div>
+				<div asp-validation-summary="ModelOnly" style="color:red"></div>
+				<button>
+					<span>Kayıt Ol</span>
+				</button>
+			</form>
+			<div style="text-align: center; margin-top:20px">
+				<a href="/Login/SingIn"> 
+					Bir hesabınız var mı? <b style="color:blue"> Giriş Yap</b>
+				</a>
+			</div>
+			<img src="~/colorlib/images/image-2.png" alt="" class="image-2">
+		</div>
+
+	</div>
+
+	<script src="~/colorlib/js/jquery-3.3.1.min.js"></script>
+	<script src="~/colorlib/js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
+

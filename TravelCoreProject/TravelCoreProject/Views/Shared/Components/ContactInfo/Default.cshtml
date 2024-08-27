@@ -1,0 +1,28 @@
+﻿@model IEnumerable<EntityLayer.Concreate.Contact>
+
+
+
+<div class="col-lg-6 contact-left">
+    @foreach(var x in Model){
+    <div class="partners">
+        <div class="cont-details">
+            <h5>Bize Ulaşın</h5>
+            <p class="mt-3 mb-4">
+                @x.ContactDescription
+            </p>
+        </div>
+        <div class="hours">
+            <h6 class="mt-4">Email:</h6>
+            <p>
+                <a href="@x.ContactMail">
+                    @x.ContactMail
+                </a>
+            </p>
+            <h6 class="mt-4">Adres</h6>
+            <p> @x.ContactAddress</p>
+            <h6 class="mt-4">İletişim</h6>
+            <p class="margin-top"><a href="tel:@x.ContactPhone">@x.ContactPhone</a></p>
+        </div>
+    </div>
+    }
+</div>

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<EntityLayer.Concreate.Reservation>
+
+@{
+    ViewData["Title"] = "MyCurrentReservation";
+    Layout = "~/Views/Shared/_MemberLayout.cshtml";
+}
+
+
+@if (Model.ToList().Count <= 0)
+{
+    <h1>Aktif Rota Bulunmamaktadır</h1>
+}
+else
+{
+    <table class="table table-bordered">
+        <tr>
+            <td>Id</td>
+            <td>Rota</td>
+            <td>Rezervasyon adeti</td>
+            <td>Tarih</td>
+            <td>Açıklama</td>
+            <td>Durum</td>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.ReservationId</td>
+                <td>@x.Destination.DestinationCity</td>
+                <td>@x.PersonCount</td>
+                <td>@(x.ReservationDate.HasValue ? x.ReservationDate.Value.ToString("dd/MM/yyyy") : "")</td>
+                <td>@x.Description</td>
+                <td>@x.status</td>
+            </tr>
+        }
+
+    </table>
+}
+
+
+
+

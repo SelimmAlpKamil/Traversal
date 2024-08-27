@@ -1,0 +1,44 @@
+﻿@model TravelCoreProject.Areas.Member.Models.ProfileEditViewModels
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_MemberLayout.cshtml";
+}
+
+
+
+
+<form method="post" class="form-group" enctype="multipart/form-data">
+ 
+    <label>İsim</label>
+    <input type="text" asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+    <br />
+    <label>Soy İsim</label>
+    <input type="text" asp-for="Surname" class="form-control" />
+    <span asp-validation-for="Surname" class="text-danger"></span>
+    <br />
+    <label>Mail</label>
+    <input type="text" asp-for="Mail" class="form-control" />
+    <span asp-validation-for="Mail" class="text-danger"></span>
+    <br />
+    <label>Telefon Numarası</label>
+    <input type="text" asp-for="PhoneNumber" class="form-control" />
+    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    <br />
+    <label>Şifre</label>
+    <input type="text" asp-for="PassWord" class="form-control" />
+    <span asp-validation-for="PassWord" class="text-danger"></span>
+    <br />
+    <label>Şifre tekrar</label>
+    <input type="text" asp-for="ConfigPassWord" class="form-control" />
+    <span asp-validation-for="ConfigPassWord" class="text-danger"></span>
+    <br />
+    <div class="form-group">
+        <label>Resim Seçin</label>
+        <input type="file" asp-for="Image" class="form-control" />
+        <span asp-validation-for="Image" class="text-danger"></span>
+
+    </div>
+    <button class="btn btn-primary">Güncelle</button>
+</form>
+

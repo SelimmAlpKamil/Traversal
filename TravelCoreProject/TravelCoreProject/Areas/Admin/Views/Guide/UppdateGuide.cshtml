@@ -1,0 +1,36 @@
+﻿@model EntityLayer.Concreate.Guide
+
+
+
+@{
+    ViewData["Title"] = "UppdateGuide";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post" class="form-group">
+    <input type="text" asp-for="GuideID" class="form-control" style="visibility:hidden" />
+    <label>İsim</label>
+    <input type="text" asp-for="GuideName" class="form-control" />
+    <span style="color:red" asp-validation-for="GuideName"></span>
+    <br />
+    <label>Resim</label>
+    <input type="text" asp-for="GuideImage" class="form-control" />
+    <span style="color:red" asp-validation-for="GuideImage"></span>
+    <br />
+    <label>Açıklama</label>
+    <input type="text" asp-for="GuideDescripton" class="form-control" />
+    <span style="color:red" asp-validation-for="GuideDescripton"></span>
+    <br />
+    <label>Instagram Adresi</label>
+    <input type="text" asp-for="GuideInstagramURL" class="form-control" />
+    <span style="color:red" asp-validation-for="GuideInstagramURL"></span>
+    <br />
+    <label>X Adresi</label>
+    <input type="text" asp-for="GuideXURL" class="form-control" />
+    <span style="color:red" asp-validation-for="GuideXURL"></span>
+    <br />
+    <button class="btn btn-info">Güncelle</button>
+
+
+</form>
+

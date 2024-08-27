@@ -1,0 +1,42 @@
+﻿@model IEnumerable<EntityLayer.Concreate.Testimonial>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>İsim</th>
+        <th>Yorum</th>
+        <th>Resim</th>
+        <th>Durum</th>
+        <th>Güncelle</th>
+        <th>Sil</th>
+
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.TestimonialId</td>
+            <td>@x.TestimonialClient</td>
+            <td>@x.TestimonialComment</td>
+            <td>@x.TestimonialImage</td>
+            <td>@x.TestimonialStatus</td>
+
+            <td>
+                <a class="btn btn-warning" href="/Admin/Testimonial/UppdateTestimonial/@x.TestimonialId">Güncelle</a>
+            </td>
+            <td>
+                <a class="btn btn-danger" href="/Admin/Testimonial/DeleteTestimonial/@x.TestimonialId">Sil</a>
+            </td>
+         
+        </tr>
+    }
+
+
+</table>
+
+<a class="btn btn-info" href="/Admin/Testimonial/AddTestimonial">Ekle</a>
+

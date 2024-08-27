@@ -1,0 +1,40 @@
+﻿@model IEnumerable<EntityLayer.Concreate.Reservation>
+@{
+    ViewData["Title"] = "PasifRecervationList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h1>İptal Edilen Rezervasyonlar</h1>
+
+@if (Model.Count() >0)
+{
+    <table class="table table-bordred">
+        <tr>
+            <th>Id</th>
+            <th>İsim</th>
+            <th>Rezervasyon Adeti</th>
+            <th>Tarih</th>
+            <th>Durum</th>
+            <th>Onayla</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.ReservationId</td>
+                <td>@x.AppUser.Name</td>
+                <td>@x.PersonCount</td>
+                <td>@(x.ReservationDate.HasValue ? x.ReservationDate.Value.ToString("dd-MM-yyyy") : "")</td>
+                <td>@x.status</td>
+                <td>
+                    <a href="/Admin/Recervation/ActiveRecervation/@x.ReservationId" class="btn btn-success">Onayla</a>
+                </td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <h2>İptal Edilen Rezarvasyon yoktur</h2>
+}
+

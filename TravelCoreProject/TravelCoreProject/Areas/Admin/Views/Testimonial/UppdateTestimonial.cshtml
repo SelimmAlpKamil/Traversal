@@ -1,0 +1,25 @@
+﻿@model EntityLayer.Concreate.Testimonial
+@{
+    ViewData["Title"] = "UppdateTestimonial";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Deneyim Güncelle</h1>
+
+<form method="post" class="form form-group">
+    <input type="hidden" class="form-control" asp-for="TestimonialId" />
+    <label>İsim</label>
+    <input class="form-control" asp-for="TestimonialClient" />
+    <span class="alert-danger" asp-validation-for="TestimonialClient"></span>
+    <br />
+    <label>Yorum</label>
+    <input class="form-control" asp-for="TestimonialComment" />
+    <span class="alert-danger" asp-validation-for="TestimonialComment"></span>
+    <br />
+    <label>Resim</label>
+    <input class="form-control" asp-for="TestimonialImage" />
+    <span class="alert-danger" asp-validation-for="TestimonialImage"></span>
+    <br />
+    <button class="btn btn-primary">Güncelle</button>
+</form>
+

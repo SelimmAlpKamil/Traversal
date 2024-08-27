@@ -1,0 +1,67 @@
+﻿@model IEnumerable<EntityLayer.Concreate.ContactUs>
+@{
+    ViewData["Title"] = "PasifContact";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+@if (Model.Count() > 0)
+{
+    <h1>Bize Ulaşın Mesajları</h1>
+
+    <table class="table table-bordered">
+        <tr>
+            <th>ID</th>
+            <th>İsim</th>
+            <th>Mail</th>
+            <th>Konu</th>
+            <th>Mesaj</th>
+            <th>Tarih</th>
+            <th>Durum</th>
+            <th>Gelen Mesajlara Taşı</th>
+            <th>Detay</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.ContactUsID</td>
+                <td>@x.ContactUsName</td>
+                <td>@x.ContactUsMail</td>
+                <td>@x.ContactUsSubject</td>
+                <td>@x.ContactUsMessage</td>
+                <td>@x.ContactUsDate.ToString("dd-MMM-yyyy")</td>
+
+                @{
+                    if (@x.ContactUsStatus == true)
+                    {
+                        <td>Aktif</td>
+                    }
+                    else
+                    {
+                        <td>Pasif</td>
+                    }
+                }
+
+                <td>
+                    <a class="btn btn-danger" href="/Admin/ContactUs/ChangeStatusTrueContact/@x.ContactUsID">Gelen Mesajlara Taşı</a>
+                </td>
+                <td>
+                    <a class="btn btn-info" href="/Admin/ContactUs/ContactDetail/@x.ContactUsID">Detay</a>
+                </td>
+            </tr>
+        }
+
+
+    </table>
+}
+else
+{
+    <h1>Silinen Mesaj Yoktur</h1>
+}
+
+
+
+
+
+<a href="/Admin/ContactUs/ActiveContact" class="btn btn-primary">Geri Dön</a>

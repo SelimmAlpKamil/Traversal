@@ -1,0 +1,28 @@
+﻿@model IEnumerable<EntityLayer.Concreate.AppUser>
+@{
+    ViewData["Title"] = "UserIndex";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Kullanıcı Listesi</h1>
+
+<table class="table table-bordered">
+    <tr>
+        <td>Id</td>
+        <td>İsim</td>
+        <td>Kullanıcı İsmi</td>
+        <td>Role Ata</td>
+    </tr>
+    @foreach(var x in Model)
+    {
+        <tr>
+            <td>@x.Id</td>
+            <td>@x.Name</td>
+            <td>@x.UserName</td>
+            <td>
+                <a class="btn btn-primary" href="/Admin/Role/RoleDetail/@x.Id">Rol Ekle</a>
+            </td>
+        </tr>
+    }
+</table>
+

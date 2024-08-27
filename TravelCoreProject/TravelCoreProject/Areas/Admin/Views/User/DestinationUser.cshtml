@@ -1,0 +1,48 @@
+﻿@model IEnumerable<EntityLayer.Concreate.Reservation>
+
+@{
+    ViewData["Title"] = "DestinationUser";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@{
+    int sayi = 0;
+}
+
+@foreach (var x in Model)
+{
+    sayi += 1;
+}
+
+
+@if (sayi<=0)
+{
+    <h1>Henüz bir tura katılmamış</h1>
+}
+else
+{
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Ad Soyad</th>
+            <th>Rota</th>
+            <th>Kişi Sayısı</th>
+            <th>Tarih</th>
+        </tr>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.ReservationId</td>
+                <td>@ViewBag.user</td>
+                <td>@x.Destination.DestinationCity</td>
+                <td>@x.PersonCount</td>
+                <td>@x.ReservationDate?.ToString("dd-MMM-yyyy")</td>
+            </tr>
+        }
+    </table>
+
+    
+}
+
+
+

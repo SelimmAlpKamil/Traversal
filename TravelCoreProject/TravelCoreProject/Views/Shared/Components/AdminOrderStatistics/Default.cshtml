@@ -1,0 +1,73 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<div class="col-md-6 col-lg-4 order-2 mb-4">
+    <div class="card h-100">
+        
+        <div class="card-body">
+            
+            <ul class="p-0 m-0">
+                <li class="d-flex mb-4 pb-1">
+                    <div class="avatar flex-shrink-0 me-3">
+                        <span class="avatar-initial rounded bg-label-primary">
+                            <i class="bx bx-mobile-alt"></i>
+                        </span>
+                    </div>
+                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                        <div class="me-2">
+                            <h6 class="mb-0">Toplam Rezervasyon Sayısı</h6>
+                            
+                        </div>
+                        <div class="user-progress">
+                            <small class="fw-semibold">@ViewBag.CountRecervation</small>
+                        </div>
+                    </div>
+                </li>
+                <li class="d-flex mb-4 pb-1">
+                    <div class="avatar flex-shrink-0 me-3">
+                        <span class="avatar-initial rounded bg-label-success"><i class="bx bx-closet"></i></span>
+                    </div>
+                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                        <div class="me-2">
+                            <h6 class="mb-0">Onaylanan Rezervasyon Aderi</h6>
+                        </div>
+                        <div class="user-progress">
+                            <small class="fw-semibold">@ViewBag.countCurrent</small>
+                        </div>
+                    </div>
+                </li>
+                <li class="d-flex mb-4 pb-1">
+                    <div class="avatar flex-shrink-0 me-3">
+                        <span class="avatar-initial rounded bg-label-info"><i class="bx bx-home-alt"></i></span>
+                    </div>
+                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                        <div class="me-2">
+                            <h6 class="mb-0">Onay Bekleyen Rezervasyon Adeti</h6>
+                        </div>
+                        <div class="user-progress">
+                            <small class="fw-semibold">@ViewBag.countApproval</small>
+                        </div>
+                    </div>
+                </li>
+                <li class="d-flex">
+                    <div class="avatar flex-shrink-0 me-3">
+                        <span class="avatar-initial rounded bg-label-secondary">
+                            <i class="bx bx-football"></i>
+                        </span>
+                    </div>
+                    <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
+                        <div class="me-2">
+                            <h6 class="mb-0">İptal Edilen Rezervasyon Adeti</h6>
+
+                        </div>
+                        <div class="user-progress">
+                            <small class="fw-semibold">@ViewBag.countOld</small>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+﻿@model IEnumerable<EntityLayer.Concreate.Comment>
+
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@ViewBag.test
+
+
+<div class="comments mt-5">
+    <h4 class="side-title ">Yorum: @Model.Count()</h4>
+    @if (@Model.Count() > 0)
+    {
+        @foreach (var x in Model)
+        {
+            <div class="media mt-4">
+                <div class="img-circle">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_Lx4BAPRCl2YfASFsIoQui5wydcspprjLPw&s" class="img-fluid" alt="...">
+                </div>
+                <div class="media-body">
+
+                    <ul class="time-rply mb-2">
+                        <li>
+                            <b>@x.CommentName</b>
+                            <br />
+                            @x.CommentDate.ToString("dd-MM-yyyy")
+                          
+                        </li>
+
+                    </ul>
+                    <p>
+                        @x.CommentMessage
+                    </p>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <div class="media mt-4">
+            <div class="img-circle">
+                <img src="https://png.pngtree.com/png-clipart/20230401/original/pngtree-thinking-line-icon-png-image_9018411.png" class="img-fluid" alt="...">
+            </div>
+            <div class="media-body">
+
+                <ul class="time-rply mb-2">
+                    <li>
+                        Henüz yorum yapılmadı
+
+                    </li>
+
+                </ul>
+                <p>
+                    Hemen yorum yap.....
+                </p>
+            </div>
+        </div>
+
+    }
+
+
+
+
+
+
+</div>

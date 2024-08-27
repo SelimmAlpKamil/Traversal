@@ -1,0 +1,22 @@
+﻿@model TravelCoreProject.CQRS.Result.DestinationResult.GetByIDDestinatonQueriesResult
+
+
+@{
+    ViewData["Title"] = "GetByIDList";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Şehir Güncelle</h1>
+
+<form method="post">
+    <label>Şehir</label>
+    <input type="text" asp-for="City" class="form-control"/>
+    <br />
+    <label>Süresi</label>
+    <input type="text" asp-for="DayAndNight" class="form-control" />
+    <br />
+
+    <button class="btn btn-primary">Güncelle</button>
+
+</form>
+

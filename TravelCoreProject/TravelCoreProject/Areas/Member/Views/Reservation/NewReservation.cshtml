@@ -1,0 +1,30 @@
+﻿@model EntityLayer.Concreate.Reservation
+
+@{
+    ViewData["Title"] = "NewReservation";
+    Layout = "~/Views/Shared/_MemberLayout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <label>Lütten Rota seçin</label>
+    @Html.DropDownListFor(x => x.DestinationId, (IEnumerable<SelectListItem>)ViewBag.DestinationValue, new {@class="form-control"})
+    @Html.ValidationMessageFor(x=>x.DestinationId,"", new {@style="Color:red"})
+    <br />
+    <label>Kişi Sayısı</label>
+    <input type="number" asp-for="PersonCount" class="form-control" />
+    @Html.ValidationMessageFor(x => x.PersonCount,"", new { @style = "Color:red" })
+    <br />
+    <label>Tarih</label>
+    <input type="date" asp-for="ReservationDate" class="form-control" />
+    @Html.ValidationMessageFor(x => x.ReservationDate, "", new { @style = "Color:red" })
+    <br />
+    <label>Açıklama</label>
+    <input type="text" asp-for="Description" class="form-control" />
+    @Html.ValidationMessageFor(x => x.ReservationDate, "", new { @style = "Color:red" })
+
+
+    <br />
+    <button class="btn btn-primary">Ekle</button>
+
+</form>
+

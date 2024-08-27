@@ -1,0 +1,41 @@
+﻿@model IEnumerable<TravelCoreProject.Areas.Admin.Models.BookHotelViewModel.Result>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Hotel Listesi</h1>
+
+<a class="btn btn-info" href="/Admin/BookHotelSearch/Index">Başka Konumda Hotel Ara</a>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Hotel Resmi</th>
+        <th>Hotel İsmi</th>
+        <th>Adres</th>
+        <th>Hotel Minimum fiyatı</th>
+        <th>Detay</th>
+    </tr>
+    @foreach(var x in Model)
+    {
+        <tr>
+            <td>
+                <img src="@x.max_photo_url" width="200px" height="200px" style="object-fit: cover;" />
+            </td>
+            <td>@x.hotel_name</td>
+            <td>@x.address</td>
+            <td>@x.min_total_price $</td>
+            <td>
+                <a class="btn btn-info" href="@x.url">Detaylar</a>
+            </td>
+        </tr>
+
+        
+    }
+
+</table>
+
+
+

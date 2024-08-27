@@ -1,0 +1,32 @@
+﻿@model TravelCoreProject.CQRS.Commands.DestinatonCommand.CreateDestinationCommand
+
+@{
+    ViewData["Title"] = "AddDestinaton";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Rota Ekle</h1>
+
+
+
+<form method="post">
+    <label>Şehir</label>
+    <input type="text" asp-for="DestinationCity" class="form-control" />
+    <span asp-validation-for="DestinationCity"></span>
+    <br />
+    <label>Süre</label>
+    <input type="text" asp-for="DestinationDayAndNight" class="form-control" />
+    <span asp-validation-for="DestinationDayAndNight"></span>
+    <br />
+    <label>Fiyat</label>
+    <input type="text" asp-for="DestinationPrice" class="form-control" />
+    <span asp-validation-for="DestinationPrice"></span>
+    <br />
+    <label>Kişi sayısı</label>
+    <input type="text" asp-for="DestinationCapacity" class="form-control" />
+    <span asp-validation-for="DestinationCapacity"></span>
+    <br />
+
+    <button class="btn btn-primary">Ekle</button>
+
+</form>

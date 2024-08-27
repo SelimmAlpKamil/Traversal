@@ -1,0 +1,50 @@
+﻿@model IEnumerable<EntityLayer.Concreate.Testimonial>
+
+
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+<section class="w3l-clients" id="clients">
+    <!-- /grids -->
+    <div class="cusrtomer-layout py-5">
+        <div class="container py-lg-4 py-md-3 pb-lg-0">
+            <div class="heading text-center mx-auto">
+                <h6 class="sub-title text-center">Müşterilerden</h6>
+                <h3 class="hny-title mb-md-5 mb-4">Bize Gelen Yorumlar</h3>
+            </div>
+            <!-- /grids -->
+            <div class="testimonial-width">
+                <div id="owl-demo1" class="owl-two owl-carousel owl-theme">
+
+                    @foreach(var x in Model){
+                    <div class="item">
+                        <div class="testimonial-content">
+                            <div class="testimonial">
+                                <blockquote>
+                                    <span class="fa fa-quote-left" aria-hidden="true"></span>
+                                    @x.TestimonialComment
+                                </blockquote>
+                                <div class="testi-des">
+                                    <div class="test-img">
+                                        <img src="@x.TestimonialImage" class="img-fluid" alt="client-img">
+                                    </div>
+                                    <div class="peopl align-self">
+                                        <h3>@x.TestimonialClient</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                    
+
+
+                </div>
+            </div>
+        </div>
+        <!-- /grids -->
+    </div>
+    <!-- //grids -->
+</section>

@@ -1,0 +1,21 @@
+﻿@model EntityLayer.Concreate.AboutSub
+
+@{
+    ViewData["Title"] = "AboutSubPage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post" class="form form-group">
+    <input type="hidden" asp-for="AboutId" class="form-control" />
+    <label>Başlık Bir</label>
+    <input type="text" asp-for="AboutTitle" class="form-control" />
+    <span class="alert-danger" asp-validation-for="AboutTitle"></span>
+    <br />
+    <label>Açıklama Bir</label>
+    <textarea cols=5 rows=5 asp-for="AboutDescription" class="form-control"></textarea>
+    <span class="alert-danger" asp-validation-for="AboutDescription"></span>
+    <br />
+    
+    <button class="btn btn-info">Güncelle</button>
+</form>
+

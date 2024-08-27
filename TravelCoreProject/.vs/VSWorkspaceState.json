@@ -1,0 +1,19 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\TravelCoreProject",
+    "\\TravelCoreProject\\Areas",
+    "\\TravelCoreProject\\Areas\\Admin",
+    "\\TravelCoreProject\\Areas\\Admin\\Views",
+    "\\TravelCoreProject\\Areas\\Admin\\Views\\About",
+    "\\TravelCoreProject\\Controllers",
+    "\\TravelCoreProject\\Models",
+    "\\TravelCoreProject\\Views",
+    "\\TravelCoreProject\\Views\\Home",
+    "\\TravelCoreProject\\Views\\Shared",
+    "\\TravelCoreProject\\Views\\Shared\\Components",
+    "\\TravelCoreProject\\Views\\Shared\\Components\\NewLetterPartial"
+  ],
+  "SelectedNode": "\\TravelCoreProject\\Views\\Home\\Index.cshtml",
+  "PreviewInSolutionExplorer": false
+}

@@ -1,0 +1,42 @@
+﻿@model IEnumerable<TravelCoreProject.CQRS.Result.DestinationResult.GetAllDestinatonQureisResult>
+
+
+@{
+
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>CQRS Tablosu</h1>
+
+<table class="table table-bordred">
+    <tr>
+        <td>ID</td>
+        <td>Şehir</td>
+        <td>Süre</td>
+        <td>Fiyat</td>
+        <td>Kapasite</td>
+        <td>Düzenle</td>
+        <td>Sil</td>
+    </tr>
+    @foreach(var x in Model)
+    {
+        <tr>
+            <td>@x.ID</td>
+            <td>@x.City</td>
+            <td>@x.DayAndNight</td>
+            <td>@x.Price</td>
+            <td>@x.Capacity</td>
+            <td>
+
+                <a class="btn btn-danger" href="/Admin/DestinatonCQRS/DeleteDestinaton/@x.ID">Sil</a>
+            </td>
+            <td>
+                <a class="btn btn-warning" href="/Admin/DestinatonCQRS/GetByIDList/@x.ID">Güncelle</a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a class="btn btn-primary" href="/Admin/DestinatonCQRS/AddDestinaton">Ekle</a>
+

@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<div class="container-xxl flex-grow-1 container-p-y">
+    <div class="row">
+
+        @await Component.InvokeAsync("AdminDashboardCard")
+
+        @await Component.InvokeAsync("AdminStatistics")
+
+        
+    </div>
+
+    <div class="row">
+
+        @await Component.InvokeAsync("AdminOrderStatistics")
+        
+
+
+        @await Component.InvokeAsync("AdminGuideList")
+
+    </div>
+</div>
+
+
+    
+
+
+
+
+
+
+
+
+    <script src="~/sneat-1.0.0/assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="~/sneat-1.0.0/assets/vendor/libs/popper/popper.js"></script>
+    <script src="~/sneat-1.0.0/assets/vendor/js/bootstrap.js"></script>
+    <script src="~/sneat-1.0.0/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+    <script src="~/sneat-1.0.0/assets/vendor/js/menu.js"></script>
+
+    <script src="~/sneat-1.0.0/assets/vendor/libs/apex-charts/apexcharts.js"></script>
+
+    <script src="~/sneat-1.0.0/assets/js/main.js"></script>
+
+    <!-- Page JS -->
+    <script src="~/sneat-1.0.0/assets/js/dashboards-analytics.js"></script>
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+
+
+

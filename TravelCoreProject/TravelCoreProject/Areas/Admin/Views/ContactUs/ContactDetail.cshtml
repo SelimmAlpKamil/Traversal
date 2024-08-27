@@ -1,0 +1,21 @@
+﻿@model EntityLayer.Concreate.ContactUs
+
+@{
+    ViewData["Title"] = "ContactDetail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Mesaj Detayı</h1>
+
+<form class="form-group">
+    <input class="form-control" type="text" asp-for="ContactUsName"  readonly />
+    <br />
+    <input class="form-control" type="text" asp-for="ContactUsMail"  readonly />
+    <br />
+    <input class="form-control" type="text" asp-for="ContactUsSubject"  readonly />
+    <br />
+    <textarea rows="5" cols="20" class="form-control" type="text" asp-for="ContactUsMessage"  readonly></textarea>
+    <br />
+
+</form>
+

@@ -1,0 +1,28 @@
+﻿@model EntityLayer.Concreate.Contact
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post" class="form form-group">
+    <input type="hidden" class="form-control" asp-for="ContactId" />
+    <label>Açıklama</label>
+    <input class="form-control" asp-for="ContactDescription" />
+    <span class="alert-danger" asp-validation-for="ContactDescription"></span>
+    <br />
+    <label>Adres</label>
+    <input class="form-control" asp-for="ContactAddress" />
+    <span class="alert-danger" asp-validation-for="ContactAddress"></span>
+    <br />
+    <label>Mail</label>
+    <input class="form-control" asp-for="ContactMail" />
+    <span class="alert-danger" asp-validation-for="ContactMail"></span>
+    <br />
+    <label>Telefon</label>
+    <input class="form-control" asp-for="ContactPhone" />
+    <span class="alert-danger" asp-validation-for="ContactPhone"></span>
+    <br />
+    <button class="btn btn-primary">Güncelle</button>
+</form>
+

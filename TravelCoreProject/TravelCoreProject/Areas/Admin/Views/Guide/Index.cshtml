@@ -1,0 +1,54 @@
+﻿@model IEnumerable<EntityLayer.Concreate.Guide>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordred">
+    <tr>
+        <th>Id</th>
+        <th>Resim</th>
+        <th>Ad Soyad</th>
+        <th>Açıklama</th>
+        <th>Instagram Adresi</th>
+        <th>X Adresi</th>
+        <th>Durum</th>
+        <th>Düzenle</th>
+    </tr
+
+    @foreach(var x in Model)
+    {
+        <tr>
+            <td>@x.GuideID</td>
+            <td>
+                <img class="rounded-circle" src="@x.GuideImage" height="50" width="50" />
+            </td>
+            <td>@x.GuideName</td>
+            <td>@x.GuideDescripton</td>
+            <td>@x.GuideInstagramURL</td>
+            <td>@x.GuideXURL</td>
+            @{
+                if (x.GuideStatus == true)
+                {
+                    <td>
+                        <a class="btn btn-danger" href="/Admin/Guide/ChangeToFalse/@x.GuideID">Pasif yap</a>
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <a class="btn btn-success" href="/Admin/Guide/ChangeToTrue/@x.GuideID">Aktif yap</a>
+                    </td>
+                }
+            }
+            <td>
+                <a href="/Admin/Guide/UppdateGuide/@x.GuideID" class="btn btn-info">Düzenle</a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a class="btn btn-primary" href="/Admin/Guide/AddGuide">Yeni Rehber Ekle</a>
+

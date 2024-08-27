@@ -1,0 +1,27 @@
+﻿@model IEnumerable<EntityLayer.Concreate.Destination>
+
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+
+<section class="w3l-grids1">
+    <div class="hny-three-grids py-5">
+        <div class="container py-lg-5">
+            <h2>Refarans Turlarımız</h2>
+            <br />
+            <div class="row">
+                @foreach(var x in Model){
+
+                <div class="col-md-4 col-sm-6 mt-0 grids5-info">
+                        <a href="/Destination/DestinationDetail/@x.DestinationId"><img src="@x.DestinationImageDetail" class="img-fluid"  class="img-fluid" alt="" style="object-fit: cover; width: 400px; height: 600px;"></a>
+                    <h5>@x.DestinationCity</h5>
+                    <p>@x.DestinationDescription</p>
+                </div>
+
+                }
+            </div>
+        </div>
+    </div>
+</section>

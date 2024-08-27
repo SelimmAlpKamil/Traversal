@@ -1,0 +1,26 @@
+﻿@model List<TravelCoreProject.Areas.Admin.Models.RoleDetailsViewModel>
+
+
+@{
+    ViewData["Title"] = "RoleDetail";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Role Detayı</h1>
+
+<form method="post">
+    @for(int i=0; i< Model.Count(); i++)
+    {
+        <div class="form form-check">
+            <input type="hidden" asp-for="@Model[i].RoleId" />
+            <input type="hidden" asp-for="@Model[i].RoleName" />
+            <input type="checkbox" asp-for="@Model[i].RoleStatus" class="form form-check-input" />
+            <label for="@Model[i].RoleStatus">@Model[i].RoleName</label>
+        </div>
+
+        <br>
+        
+    }
+    <button class="btn btn-primary">Değişikliği Kaydet</button>
+</form>
+

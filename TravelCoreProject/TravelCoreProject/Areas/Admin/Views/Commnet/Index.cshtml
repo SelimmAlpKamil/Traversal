@@ -1,0 +1,34 @@
+﻿@model IEnumerable<EntityLayer.Concreate.Comment>
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Yorum</th>
+        <th>Rota</th>
+        <th>Tarih</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.CommentId</td>
+            <td>@x.CommentMessage</td>
+            <td>@x.Destination.DestinationCity</td>
+            <td>@x.CommentDate.ToString("dd-MMM-yyyy")</td>
+            <td>
+                <a class="btn btn-danger" href="/Admin/Commnet/DeleteCommnet/@x.CommentId">Sil</a>
+            </td>
+        </tr>
+
+    }
+
+</table>
+
+

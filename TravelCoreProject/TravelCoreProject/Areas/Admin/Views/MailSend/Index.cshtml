@@ -1,0 +1,28 @@
+﻿@model TravelCoreProject.Areas.Admin.Models.AdminMail
+
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+
+
+<form method="post" class="table table-bordered">
+    <label>Mail adresi</label>
+    <input type="text" asp-for="ReceiverMail" value="@TempData["mail"]" class="form-control" />
+    <br />
+    <label>Başlık</label>
+    <input type="text" asp-for="Subject" class="form-control" />
+    <br />
+    <label>Mesaj</label>
+    <textarea rows="5" cols="20"  asp-for="Body" class="form-control"></textarea>
+    <br />
+    <button class="btn btn-info">Gönder</button>
+
+
+
+</form>
+
